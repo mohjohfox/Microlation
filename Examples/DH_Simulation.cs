@@ -22,31 +22,31 @@ public class DH_Simulation
         		var parserCall = backend.Call(parser, new CallOptions<int>
         		{
         			Route = "/api/parse",
-        			Interval = _ => TimeSpan.FromMilliseconds(500)
+        			Interval = _ => TimeSpan.FromMilliseconds(200)
         		});
                 
                 var sendEvent1 = backend.Call(ptpChannel1, new CallOptions<int>
                 {
 	                Route = "/api/publish/event",
-	                Interval = _ => TimeSpan.FromMilliseconds(500)
+	                Interval = _ => TimeSpan.FromMilliseconds(200)
                 });
                 
                 var sendEvent2 = backend.Call(ptpChannel2, new CallOptions<int>
                 {
 	                Route = "/api/publish/event",
-	                Interval = _ => TimeSpan.FromMilliseconds(500)
+	                Interval = _ => TimeSpan.FromMilliseconds(200)
                 });
                 
                 var sendMessage1 = backend.Call(messageStorage1, new CallOptions<int>
                 {
 	                Route = "/api/store/message",
-	                Interval = _ => TimeSpan.FromMilliseconds(500)
+	                Interval = _ => TimeSpan.FromMilliseconds(200)
                 });
                 
                 var sendMessage2 = backend.Call(messageStorage2, new CallOptions<int>
                 {
 	                Route = "/api/store/message",
-	                Interval = _ => TimeSpan.FromMilliseconds(500)
+	                Interval = _ => TimeSpan.FromMilliseconds(200)
                 });
         
         		var simulation = new Simulation
